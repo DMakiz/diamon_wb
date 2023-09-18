@@ -16,7 +16,7 @@ lark
 numpy
 omegaconf
 open-clip-torch
-
+subprocess
 piexif
 psutil
 pytorch_lightning
