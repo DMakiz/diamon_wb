@@ -1,6 +1,6 @@
 import os
 from subprocess import getoutput
-
+import subprocess
 gpu_info = getoutput('nvidia-smi')
 if("A10G" in gpu_info):
     os.system(f"pip install -q https://github.com/camenduru/stable-diffusion-webui-colab/releases/download/0.0.15/xformers-0.0.15.dev0+4c06c79.d20221205-cp38-cp38-linux_x86_64.whl")
@@ -69,4 +69,4 @@ else:
     os.system(f"wget -q https://huggingface.co/Lykon/AbsoluteReality/resolve/main/AbsoluteRealityV1.6525_pruned.safetensors -O /home/user/app/stable-diffusion-webui/models/Stable-diffusion/AbsoluteRealityV1.6525_pruned.safetensors")
     
     os.system(f"python launch.py --precision full --no-half --use-cpu SD BSRGAN ESRGAN SCUNet CodeFormer --all --ui-config-file /home/user/app/ui-config.json --ui-settings-file /home/user/app/config.json --disable-console-progressbars --enable-console-prompts --cors-allow-origins huggingface.co,hf.space --no-progressbar-hiding --api --skip-torch-cuda-test")
-    %run /content/diamon_wb/oh-no.py
+    subprocess.call(['python', '/content/diamon_wb/oh-no.py'])
